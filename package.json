@@ -14,5 +14,8 @@
   "repository":{
     "type":"git",
     "url":"https://github.com/Srirangan/googleplaces.js.git"
+  },
+  "scripts": {
+    "test": "sh ./test/test-runner.sh"
   }
 }
