@@ -12,5 +12,5 @@ var parameters = {
 
 placeSearch(parameters, function (response) {
 //  console.log(response);
-  assert.notEqual(response.results.length, 0);
+  assert.notEqual(response.results.length, 0, "Place search must not return 0 results");
 });
