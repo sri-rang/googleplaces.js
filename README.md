@@ -34,14 +34,86 @@ Yes, fork and hack away
 get started
 ===
 
-google stuff
+google
 ---
 
 * Enable Google Places API on [Google API Console](https://code.google.com/apis/console)
 * Create a server side API on [Google API Console](https://code.google.com/apis/console)
 * Enable billing for more requests per day
 
-code stuff
+code
 ---
 
-(coming soon, hang in there)
+    $ npm install googleplaces
+
+config.js
+---
+
+    exports.apiKey = "..your api key here..";
+    exports.outputFormat = "json";
+
+place-search.js
+---
+
+    var config = require("./config.js");
+
+    var GooglePlaces = require("googleplaces");
+    var googlePlaces = new GooglePlaces(config.apiKey, config.outputFormat);
+    var parameters;
+
+    /**
+     * Place search - https://developers.google.com/places/documentation/#PlaceSearchRequests
+     */
+    parameters = {
+      location:[-33.8670522, 151.1957362],
+      types:"doctor"
+    };
+    googlePlaces.placeSearch(parameters, function (response) {
+      console.log(response.results);
+    });
+
+text-search.js
+---
+
+    var config = require("./config.js");
+
+    var GooglePlaces = require("googleplaces");
+    var googlePlaces = new GooglePlaces(config.apiKey, config.outputFormat);
+    var parameters;
+
+    /**
+     * Text search - https://developers.google.com/places/documentation/#TextSearchRequests
+     */
+    parameters = {
+      query:"restaurants in dublin"
+    };
+    googlePlaces.textSearch(parameters, function (response) {
+      console.log(response.results);
+    });
+
+place-details-request.js
+---
+
+    var config = require("./config.js");
+
+    var GooglePlaces = require("googleplaces");
+    var googlePlaces = new GooglePlaces(config.apiKey, config.outputFormat);
+    var parameters;
+
+    /**
+     * Place details requests - https://developers.google.com/places/documentation/#PlaceDetails
+     */
+    parameters = {
+      location:[-33.8670522, 151.1957362],
+      types:"doctor"
+    };
+    googlePlaces.placeSearch(parameters, function (response) {
+      googlePlaces.placeDetailsRequest({reference:response.results[0].reference}, function (response) {
+        console.log(response.result);
+      });
+    });
+
+examples repo
+---
+
+[https://github.com/Srirangan/googleplaces.js-examples](https://github.com/Srirangan/googleplaces.js-examples)
