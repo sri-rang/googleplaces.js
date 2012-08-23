@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/Srirangan/googleplaces.js.png)](http://travis-ci.org/Srirangan/googleplaces.js)
 googleplaces.js
 ===
 
