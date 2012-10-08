@@ -9,7 +9,7 @@
     "email":"srirangan@gmail.com"
   },
   "author":"Srirangan <srirangan@gmail.com> (http://srirangan.net)",
-  "contributors":["", ""],
+  "contributors":["metafedora@gmail.com (http://andrew.dalgleish.info)"],
   "main":"./index.js",
   "repository":{
     "type":"git",
