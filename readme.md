@@ -68,7 +68,7 @@ place-search.js
       location:[-33.8670522, 151.1957362],
       types:"doctor"
     };
-    googlePlaces.placeSearch(parameters, function (response) {
+    googlePlaces.placeSearch(parameters, function (error, response) {
       console.log(response.results);
     });
 
@@ -87,7 +87,7 @@ text-search.js
     parameters = {
       query:"restaurants in dublin"
     };
-    googlePlaces.textSearch(parameters, function (response) {
+    googlePlaces.textSearch(parameters, function (error, response) {
       console.log(response.results);
     });
 
@@ -107,8 +107,8 @@ place-details-request.js
       location:[-33.8670522, 151.1957362],
       types:"doctor"
     };
-    googlePlaces.placeSearch(parameters, function (response) {
-      googlePlaces.placeDetailsRequest({reference:response.results[0].reference}, function (response) {
+    googlePlaces.placeSearch(parameters, function (error, response) {
+      googlePlaces.placeDetailsRequest({reference:response.results[0].reference}, function (error, response) {
         console.log(response.result);
       });
     });
