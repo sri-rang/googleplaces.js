@@ -50,8 +50,6 @@ Yes, fork, hack and send me a PR
 
 ### places search
 
-    var config = require("./config.js");
-
     var GooglePlaces = require("googleplaces");
     var googlePlaces = new GooglePlaces(process.env.GOOGLE_PLACES_API_KEY, process.env.GOOGLE_PLACES_OUTPUT_FORMAT);
     var parameters;
@@ -69,8 +67,6 @@ Yes, fork, hack and send me a PR
     });
 
 ### places details
-
-    var config = require("./config.js");
 
     var GooglePlaces = require("googleplaces");
     var googlePlaces = new GooglePlaces(process.env.GOOGLE_PLACES_API_KEY, process.env.GOOGLE_PLACES_OUTPUT_FORMAT);
@@ -92,8 +88,6 @@ Yes, fork, hack and send me a PR
     });
 
 ### text search
-
-    var config = require("./config.js");
 
     var GooglePlaces = require("googleplaces");
     var googlePlaces = new GooglePlaces(process.env.GOOGLE_PLACES_API_KEY, process.env.GOOGLE_PLACES_OUTPUT_FORMAT);
