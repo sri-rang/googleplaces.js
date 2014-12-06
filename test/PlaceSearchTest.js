@@ -1,16 +1,20 @@
-var assert = new require("assert");
+(function () {
+    "use strict";
 
-var PlaceSearch = require("../lib/PlaceSearch.js");
-var config = require("./config.js");
+    var assert = require("assert");
 
-var placeSearch = new PlaceSearch(config.apiKey, config.outputFormat);
+    var PlaceSearch = require("../lib/PlaceSearch.js");
+    var config = require("./config.js");
 
-var parameters = {
-  location:[-33.8670522, 151.1957362],
-  types:"doctor"
-};
+    var placeSearch = new PlaceSearch(config.apiKey, config.outputFormat);
 
-placeSearch(parameters, function (response) {
-//  console.log(response);
-  assert.notEqual(response.results.length, 0, "Place search must not return 0 results");
-});
+    var parameters = {
+        location: [40.7127, -74.0059],
+        types: "doctor"
+    };
+
+    placeSearch(parameters, function (error, response) {
+        assert.notEqual(response.results.length, 0, "Place search must not return 0 results");
+    });
+
+})();
