@@ -69,6 +69,7 @@ place-search.js
       types:"doctor"
     };
     googlePlaces.placeSearch(parameters, function (error, response) {
+      if (error) throw error;
       console.log(response.results);
     });
 
@@ -88,6 +89,7 @@ text-search.js
       query:"restaurants in dublin"
     };
     googlePlaces.textSearch(parameters, function (error, response) {
+      if (error) throw error;
       console.log(response.results);
     });
 
@@ -108,7 +110,9 @@ place-details-request.js
       types:"doctor"
     };
     googlePlaces.placeSearch(parameters, function (error, response) {
+      if (error) throw error;
       googlePlaces.placeDetailsRequest({reference:response.results[0].reference}, function (error, response) {
+        if (error) throw error;
         console.log(response.result);
       });
     });

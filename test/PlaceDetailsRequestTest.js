@@ -16,7 +16,9 @@
     };
 
     placeSearch(parameters, function (error, response) {
+        if (error) throw error;
         placeDetailsRequest({reference: response.results[0].reference}, function (error, response) {
+            if (error) throw error;
             assert.equal(response.status, "OK", "Place details request response status is OK");
         });
     });

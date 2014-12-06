@@ -17,12 +17,14 @@
         types: "doctor"
     };
     googlePlaces.placeSearch(parameters, function (error, response) {
+        if (error) throw error;
         parameters = {
             duration: 60,
             summary: "I fell and can't get up!",
             reference: response.results[0].reference
         };
         googlePlaces.addEvent(parameters, function (error, response) {
+            if (error) throw error;
             assert.equal(response.status, "OK", "Add Event request response status is OK");
         });
     });
@@ -35,12 +37,14 @@
         types: "doctor"
     };
     googlePlaces.placeSearch(parameters, function (error, response) {
+        if (error) throw error;
         parameters = {
             duration: 60,
             summary: "I fell and can't get up!",
             reference: response.results[0].reference
         };
         googlePlaces.addEvent(parameters, function (error, response) {
+            if (error) throw error;
             assert.equal(response.status, "OK", "Add Event request response status is OK");
             parameters = {
                 event_id: response.event_id,
@@ -48,6 +52,7 @@
             };
 
             googlePlaces.deleteEvent(parameters, function (error, response) {
+                if (error) throw error;
                 assert.equal(response.status, "OK", "Delete Event request response status is OK");
             });
         });
@@ -61,12 +66,14 @@
         types: "doctor"
     };
     googlePlaces.placeSearch(parameters, function (error, response) {
+        if (error) throw error;
         parameters = {
             duration: 60,
             summary: "I fell and can't get up!",
             reference: response.results[0].reference
         };
         googlePlaces.addEvent(parameters, function (error, response) {
+            if (error) throw error;
             assert.equal(response.status, "OK", "Add Event request response status is OK");
             var parameters2 = {
                 event_id: response.event_id,
@@ -74,6 +81,7 @@
             };
 
             googlePlaces.eventDetails(parameters2, function (error, response) {
+                if (error) throw error;
                 assert.equal(response.status, "OK", "Delete Event request response status is OK");
             });
         });

@@ -17,6 +17,7 @@
         types: "doctor"
     };
     googlePlaces.placeSearch(parameters, function (error, response) {
+        if (error) throw error;
         assert.notEqual(response.results.length, 0, "Place search must not return 0 results");
     });
 
@@ -27,6 +28,7 @@
         query: "restaurants in dublin"
     };
     googlePlaces.textSearch(parameters, function (error, response) {
+        if (error) throw error;
         assert.notEqual(response.results.length, 0, "Text search must not return 0 results");
     });
 
@@ -38,7 +40,9 @@
         types: "doctor"
     };
     googlePlaces.placeSearch(parameters, function (error, response) {
+        if (error) throw error;
         googlePlaces.placeDetailsRequest({reference: response.results[0].reference}, function (error, response) {
+            if (error) throw error;
             assert.equal(response.status, "OK", "Place details request response status is OK");
         });
     });
