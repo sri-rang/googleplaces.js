@@ -1,19 +1,24 @@
-var assert = new require("assert");
+(function () {
+    "use strict";
 
-var PlaceSearch = require("../lib/PlaceSearch.js");
-var PlaceDetailsRequest = require("../lib/PlaceDetailsRequest.js");
-var config = require("./config.js");
+    var assert = require("assert");
 
-var placeSearch = new PlaceSearch(config.apiKey, config.outputFormat);
-var placeDetailsRequest = new PlaceDetailsRequest(config.apiKey, config.outputFormat);
+    var PlaceSearch = require("../lib/PlaceSearch.js");
+    var PlaceDetailsRequest = require("../lib/PlaceDetailsRequest.js");
+    var config = require("./config.js");
 
-var parameters = {
-  location:[-33.8670522, 151.1957362],
-  types:"doctor"
-};
+    var placeSearch = new PlaceSearch(config.apiKey, config.outputFormat);
+    var placeDetailsRequest = new PlaceDetailsRequest(config.apiKey, config.outputFormat);
 
-placeSearch(parameters, function (response) {
-  placeDetailsRequest({reference:response.results[0].reference}, function (response) {
-    assert.equal(response.status, "OK", "Place details request response status is OK");
-  });
-});
+    var parameters = {
+        location: [-33.8670522, 151.1957362],
+        types: "doctor"
+    };
+
+    placeSearch(parameters, function (error, response) {
+        placeDetailsRequest({reference: response.results[0].reference}, function (error, response) {
+            assert.equal(response.status, "OK", "Place details request response status is OK");
+        });
+    });
+
+})();

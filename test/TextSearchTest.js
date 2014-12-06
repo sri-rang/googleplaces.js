@@ -1,15 +1,20 @@
-var assert = new require("assert");
+(function () {
+    "use strict";
 
-var TextSearch = require("../lib/TextSearch.js");
-var config = require("./config.js");
+    var assert = require("assert");
 
-var textSearch = new TextSearch(config.apiKey, config.outputFormat);
+    var TextSearch = require("../lib/TextSearch.js");
+    var config = require("./config.js");
 
-var parameters = {
-  query:"restaurants in dublin"
-};
+    var textSearch = new TextSearch(config.apiKey, config.outputFormat);
 
-textSearch(parameters, function (response) {
-//  console.log(response);
-  assert.notEqual(response.results.length, 0, "Text search must not return 0 results");
-});
+    var parameters = {
+        query: "restaurants in dublin"
+    };
+
+    textSearch(parameters, function (error, response) {
+        assert.notEqual(response.results.length, 0, "Text search must not return 0 results");
+    });
+
+})();
+
