@@ -14,6 +14,7 @@
     };
 
     placeSearch(parameters, function (error, response) {
+        if (error) throw error;
         assert.notEqual(response.results.length, 0, "Place search must not return 0 results");
     });
 
