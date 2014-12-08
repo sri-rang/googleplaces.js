@@ -1,6 +1,6 @@
 {
   "name":"googleplaces",
-  "version":"0.3.1",
+  "version":"0.4.0",
   "description":"Node.js library for the Google Places API",
   "keywords":["google", "places", "api", "google places", "google places api"],
   "homepage":"https://github.com/Srirangan/googleplaces.js",
