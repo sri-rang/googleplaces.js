@@ -6,3 +6,4 @@ node test/PlaceDetailsRequestTest.js
 
 node test/GooglePlacesTest.js
 node test/EventsTest.js
+node test/ImageFetchTest.js
