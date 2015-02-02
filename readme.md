@@ -103,3 +103,19 @@ Yes, fork, hack and send me a PR
       if (error) throw error;
       console.log(response.results);
     });
+
+### radar search
+    var GooglePlaces = require("googleplaces");
+    var googlePlaces = new GooglePlaces(process.env.GOOGLE_PLACES_API_KEY, process.env.GOOGLE_PLACES_OUTPUT_FORMAT);
+    var parameters;
+
+    /**
+     * Radar search - https://developers.google.com/places/documentation/#RadarSearchRequests
+     */
+    parameters = {
+      query:"restaurants in dublin"
+    };
+    googlePlaces.radarSearch(parameters, function (error, response) {
+      if (error) throw error;
+      console.log(response.results);
+    });
