@@ -2,6 +2,7 @@
     "use strict";
 
     var PlaceSearch = require("./lib/PlaceSearch.js");
+    var RadarSearch = require("./lib/RadarSearch.js");
     var TextSearch = require("./lib/TextSearch.js");
     var PlaceDetailsRequest = require("./lib/PlaceDetailsRequest.js");
     var AddEvent = require("./lib/AddEvent.js");
@@ -12,6 +13,7 @@
     module.exports = function (apiKey, outputFormat) {
         return {
             placeSearch: new PlaceSearch(apiKey, outputFormat),
+            radarSearch: new RadarSearch(apiKey, outputFormat),
             textSearch: new TextSearch(apiKey, outputFormat),
             placeDetailsRequest: new PlaceDetailsRequest(apiKey, outputFormat),
             addEvent: new AddEvent(apiKey, outputFormat),
