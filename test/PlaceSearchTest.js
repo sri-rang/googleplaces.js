@@ -12,10 +12,19 @@
         location: [40.7127, -74.0059],
         types: "doctor"
     };
-
     placeSearch(parameters, function (error, response) {
         if (error) throw error;
         assert.notEqual(response.results.length, 0, "Place search must not return 0 results");
+    });
+
+    parameters = {
+        location: [40.7127, -74.0059],
+        rankby: "distance",
+        types: "doctor"
+    };
+    placeSearch(parameters, function (error, response) {
+        if (error) throw error;
+        assert.notEqual(response.results.length, 0, "Ranked place search must not return 0 results");
     });
 
 })();
