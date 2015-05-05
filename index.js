@@ -5,6 +5,7 @@
     var RadarSearch = require("./lib/RadarSearch.js");
     var TextSearch = require("./lib/TextSearch.js");
     var PlaceDetailsRequest = require("./lib/PlaceDetailsRequest.js");
+    var PlaceAutocomplete = require("./lib/PlaceAutocomplete.js");
     var AddEvent = require("./lib/AddEvent.js");
     var DeleteEvent = require("./lib/DeleteEvent.js");
     var EventDetails = require("./lib/EventDetails.js");
@@ -16,11 +17,14 @@
             radarSearch: new RadarSearch(apiKey, outputFormat),
             textSearch: new TextSearch(apiKey, outputFormat),
             placeDetailsRequest: new PlaceDetailsRequest(apiKey, outputFormat),
+            placeAutocomplete: new PlaceAutocomplete(apiKey, outputFormat),
             addEvent: new AddEvent(apiKey, outputFormat),
             deleteEvent: new DeleteEvent(apiKey, outputFormat),
             eventDetails: new EventDetails(apiKey, outputFormat),
             imageFetch: new ImageFetch(apiKey)
+
         };
     };
 
 })();
+
