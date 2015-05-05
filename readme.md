@@ -87,6 +87,24 @@ Yes, fork, hack and send me a PR
       });
     });
 
+### place autocomplete
+
+    var GooglePlaces = require("googleplaces");
+    var googlePlaces = new GooglePlaces(process.env.GOOGLE_PLACES_API_KEY, process.env.GOOGLE_PLACES_OUTPUT_FORMAT);
+    var parameters;
+
+    /**
+     * Place autocomplete - https://developers.google.com/places/webservice/autocomplete
+     */
+    parameters = {
+      input: "world trade "
+
+    };
+    googlePlaces.textSearch(parameters, function (error, response) {
+      if (error) throw error;
+      console.log(response.predictions);
+    });
+
 ### text search
 
     var GooglePlaces = require("googleplaces");
@@ -119,3 +137,5 @@ Yes, fork, hack and send me a PR
       if (error) throw error;
       console.log(response.results);
     });
+
+
