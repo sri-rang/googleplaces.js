@@ -13,8 +13,6 @@ Google already maintains a dedicated client side JavaScript [library](https://de
 ### what's supported in 0.5.0?
 
 - [Place search](https://developers.google.com/places/webservice/search)
-    - [Text search]
-    - [Radar search]
 - [Place details](https://developers.google.com/places/webservice/details)
 - [Place autocomplete](https://developers.google.com/places/webservice/autocomplete)
 - [Events](https://developers.google.com/places/documentation/events)
@@ -43,3 +41,7 @@ This library hopes to support everything served [Google Places webservice](https
     # set environment variables
     export GOOGLE_PLACES_API_KEY = "your key here"
     export GOOGLE_PLACES_OUTPUT_FORMAT = "json"
+
+# examples
+
+See [tests](https://github.com/Srirangan/googleplaces.js/tree/master/test)
