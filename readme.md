@@ -4,37 +4,33 @@ A node.js library for the Google Places API
 
 ### ugh?
 
-googleplaces.js makes it easy to talk to the Google Places API from your server side Node.js application
+googleplaces.js makes it easy to talk to the Google Places API from your Node.js application
 
 ### can i use in the browser?
 
-Google already maintains a dedicated client side JavaScript [library](https://developers.google.com/maps/documentation/javascript/places)
+Google already maintains a dedicated client side JavaScript [library](https://developers.google.com/places/javascript/)
 
-### what's supported in 0.3.0?
+### what's supported in 0.5.0?
 
-- [Places search](https://developers.google.com/places/documentation/#PlaceSearchRequests)
-- [Place details request](https://developers.google.com/places/documentation/#PlaceDetails)
-- [Text search](https://developers.google.com/places/documentation/#TextSearchRequests)
+- [Place search](https://developers.google.com/places/webservice/search)
+- [Place details](https://developers.google.com/places/webservice/details)
+- [Place autocomplete](https://developers.google.com/places/webservice/autocomplete)
 - [Events](https://developers.google.com/places/documentation/events)
-
-### what's coming up next?
-
-- [Place Actions](https://developers.google.com/places/documentation/actions)
-- [Place Photos](https://developers.google.com/places/documentation/photos)
-- [Check-ins](https://developers.google.com/places/documentation/#PlaceCheckins)
-- [Query Autocomplete](https://developers.google.com/places/documentation/query)
 
 ### can i contribute?
 
 Yes, fork, hack and send me a PR
 
+This library hopes to support everything served [Google Places webservice](https://developers.google.com/places/webservice/intro)
+
 # get started
 
 ### 1. google
 
-- Enable Google Places API on [Google API Console](https://code.google.com/apis/console)
-- Create a server side API on [Google API Console](https://code.google.com/apis/console)
-- Enable billing for more requests per day
+- Enable Google Places API on [Google API Console](https://console.developers.google.com)
+    - Create an app
+    - Enable the Places API
+    - Create credentials
 
 ### 2. npm
 
@@ -48,94 +44,4 @@ Yes, fork, hack and send me a PR
 
 # examples
 
-### places search
-
-    var GooglePlaces = require("googleplaces");
-    var googlePlaces = new GooglePlaces(process.env.GOOGLE_PLACES_API_KEY, process.env.GOOGLE_PLACES_OUTPUT_FORMAT);
-    var parameters;
-
-    /**
-     * Place search - https://developers.google.com/places/documentation/#PlaceSearchRequests
-     */
-    parameters = {
-      location:[-33.8670522, 151.1957362],
-      types:"doctor"
-    };
-    googlePlaces.placeSearch(parameters, function (error, response) {
-      if (error) throw error;
-      console.log(response.results);
-    });
-
-### places details
-
-    var GooglePlaces = require("googleplaces");
-    var googlePlaces = new GooglePlaces(process.env.GOOGLE_PLACES_API_KEY, process.env.GOOGLE_PLACES_OUTPUT_FORMAT);
-    var parameters;
-
-    /**
-     * Place details requests - https://developers.google.com/places/documentation/#PlaceDetails
-     */
-    parameters = {
-      location:[-33.8670522, 151.1957362],
-      types:"doctor"
-    };
-    googlePlaces.placeSearch(parameters, function (error, response) {
-      if (error) throw error;
-      googlePlaces.placeDetailsRequest({reference:response.results[0].reference}, function (error, response) {
-        if (error) throw error;
-        console.log(response.result);
-      });
-    });
-
-### place autocomplete
-
-    var GooglePlaces = require("googleplaces");
-    var googlePlaces = new GooglePlaces(process.env.GOOGLE_PLACES_API_KEY, process.env.GOOGLE_PLACES_OUTPUT_FORMAT);
-    var parameters;
-
-    /**
-     * Place autocomplete - https://developers.google.com/places/webservice/autocomplete
-     */
-    parameters = {
-      input: "world trade "
-
-    };
-    googlePlaces.textSearch(parameters, function (error, response) {
-      if (error) throw error;
-      console.log(response.predictions);
-    });
-
-### text search
-
-    var GooglePlaces = require("googleplaces");
-    var googlePlaces = new GooglePlaces(process.env.GOOGLE_PLACES_API_KEY, process.env.GOOGLE_PLACES_OUTPUT_FORMAT);
-    var parameters;
-
-    /**
-     * Text search - https://developers.google.com/places/documentation/#TextSearchRequests
-     */
-    parameters = {
-      query:"restaurants in dublin"
-    };
-    googlePlaces.textSearch(parameters, function (error, response) {
-      if (error) throw error;
-      console.log(response.results);
-    });
-
-### radar search
-    var GooglePlaces = require("googleplaces");
-    var googlePlaces = new GooglePlaces(process.env.GOOGLE_PLACES_API_KEY, process.env.GOOGLE_PLACES_OUTPUT_FORMAT);
-    var parameters;
-
-    /**
-     * Radar search - https://developers.google.com/places/documentation/#RadarSearchRequests
-     */
-    parameters = {
-      query:"restaurants in dublin"
-    };
-    googlePlaces.radarSearch(parameters, function (error, response) {
-      if (error) throw error;
-      console.log(response.results);
-    });
-
-
+See [tests](https://github.com/Srirangan/googleplaces.js/tree/master/test)

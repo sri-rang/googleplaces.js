@@ -1,21 +1,28 @@
 {
-  "name":"googleplaces",
-  "version":"0.4.1",
-  "description":"Node.js library for the Google Places API",
-  "keywords":["google", "places", "api", "google places", "google places api"],
-  "homepage":"https://github.com/Srirangan/googleplaces.js",
-  "bugs":{
-    "url":"https://github.com/Srirangan/googleplaces.js/issues",
-    "email":"srirangan@gmail.com"
-  },
-  "author":"Srirangan <srirangan@gmail.com> (http://srirangan.net)",
-  "contributors":["metafedora@gmail.com (http://andrew.dalgleish.info)"],
-  "main":"./index.js",
-  "repository":{
-    "type":"git",
-    "url":"https://github.com/Srirangan/googleplaces.js.git"
-  },
-  "scripts": {
-    "test": "sh ./test.sh"
-  }
+    "name": "googleplaces",
+    "version": "0.5.1",
+    "description": "Node.js library for the Google Places API",
+    "keywords": [
+        "google",
+        "places",
+        "api",
+        "google places",
+        "google places api"
+    ],
+    "homepage": "https://github.com/Srirangan/googleplaces.js",
+    "bugs": {
+        "url": "https://github.com/Srirangan/googleplaces.js/issues",
+        "email": "srirangan@gmail.com"
+    },
+    "author": "Srirangan <srirangan@gmail.com> (http://srirangan.net)",
+    "contributors": ["metafedora@gmail.com (http://andrew.dalgleish.info)"],
+    "main": "./index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Srirangan/googleplaces.js.git"
+    },
+    "scripts": {
+        "test": "sh ./test.sh"
+    },
+    "license": "MIT"
 }
