@@ -10,6 +10,7 @@
     var DeleteEvent = require("./lib/DeleteEvent.js");
     var EventDetails = require("./lib/EventDetails.js");
     var ImageFetch = require("./lib/ImageFetch.js");
+    var NearBySearch = require('./lib/NearBySearch.js');
 
     module.exports = function (apiKey, outputFormat) {
         return {
@@ -21,7 +22,8 @@
             addEvent: new AddEvent(apiKey, outputFormat),
             deleteEvent: new DeleteEvent(apiKey, outputFormat),
             eventDetails: new EventDetails(apiKey, outputFormat),
-            imageFetch: new ImageFetch(apiKey)
+            imageFetch: new ImageFetch(apiKey),
+            nearBySearch: new NearBySearch(apiKey, outputFormat)
 
         };
     };
